@@ -1,0 +1,82 @@
+/* Geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 70, 155);
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Menu lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Escondido inicialmente */
+    width: 125px;
+    height: 100%;
+    background-color: rgb(223, 0, 35);
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Garante que o menu aparece acima de outros elementos */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-top: 50px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Botão de menu (três traços) */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1100; /* Acima do menu lateral */
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    background: #000;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Estilo do contêiner principal */
+.container {
+    margin: 0px auto 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.container img {
+    max-width: 100px;
+    display: block;
+    margin-left: auto;  /* Isso empurra a imagem para a direita */
+    margin-right: 0; /* Remover qualquer margem à direita */
+}
+/* Mostrar menu quando ativo */
+.sidebar.active {
+    left: 0;
+}
+
+

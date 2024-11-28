@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/scripts.css" rel="stylesheet">
+    <title>Central de Ajuda</title>
+</head>
+<body>
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <img src="/assets/img/logo.png" alt="Logo">
+    </div>
+
+    <!-- Menu lateral -->
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="/home.html">Inicio</a></li>
+            <li><a href="#">Resultado</a></li>
+            <li><a href="/escala.html">Escala</a></li>
+            <li><a href="#">Opinião</a></li>
+        </ul>
+    </div>
+
+    <!-- Botão de menu -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    
+        <!-- Barra de Pesquisa -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar..." oninput="filterCells()">
+            <button onclick="searchPage()">Buscar</button>
+        </div>
+
+
+
+        <div class="container">
+            <!-- Exemplo de célula com título -->
+            <div class="cell" data-title="Finalização">
+                <h2>Finalização</h2>
+                <p id="text1">Se precisar de algo mais estamos sempre à disposição! Agradecemos o contato, tenha um bom dia! 
+                </p>                <button onclick="copyText('text1')">Copiar</button>  
+                <p id="text2">Se precisar de algo mais estamos sempre à disposição! Agradecemos o contato, tenha uma boa tarde! </p>
+      
+                <button onclick="copyText('text2')">Copiar</button>            
+            </div>
+            <div class="cell" data-title="Prévias" >
+                <h2>Prévias</h2>
+                <p id="text3"> Notei que já faz um tempo que não conversamos. Você ainda deseja seguir com o atendimento? 
+                </p>                <button onclick="copyText('text3')">Copiar</button>  
+                <p id="text4"> Acho que você não pode seguir com o atendimento neste momento, não é? Por isso, vou encerrar nossa conversa, mas fico no aguardo do seu retorno, está bem?
+
+                    Se precisar de algo mais, estamos à disposição. Pague Menos/Extrafarma agradece, tenha um bom dia!
+                    
+                    </p><button onclick="copyText('text4')">Copiar</button>  
+                <p id="text5"> Acho que você não pode seguir com o atendimento neste momento, não é? Por isso, vou encerrar nossa conversa, mas fico no aguardo do seu retorno, está bem?
+
+                    Se precisar de algo mais, estamos à disposição. Pague Menos/Extrafarma agradece, tenha uma boa tarde!
+                    </p><button onclick="copyText('text5')">Copiar</button>  
+                <p id="text6"> Acho que você não pode seguir com o atendimento neste momento, não é? Por isso, vou encerrar nossa conversa, mas fico no aguardo do seu retorno, está bem?
+
+                    Se precisar de algo mais, estamos à disposição. Pague Menos/Extrafarma agradece, tenha uma boa noite!
+                    </p><button onclick="copyText('text6')">Copiar</button>  
+            </div>
+            <div class="cell" data-title="status">
+                <h2>Pedidos feitos no aplicativo quando cliente quer saber status
+                </h2>
+                <p id="text7">Pedidos feitos pelo aplicativo não temos acesso nesse setor. Estarei transferindo o seu atendimento para o setor do SAC e lá eles estarão repassando maiores informações sobre seu pedido.</p><button onclick="copyText('text7')">Copiar</button> 
+            </div>
+            <div class="cell">
+                <h2>Cliente questiona se esse número é de loja física:
+                </h2>
+                <p id="text8">Esse número é da Central de Vendas da Pague Menos/Extrafarma, atendemos o Brasil todo, caso queira fazer uma pesquisa de preço, compra, verificar descontos, seria por esse número mesmo. Basta informar o seu CEP, que iremos verificar as lojas próximas da sua região.</p>
+                </p><button onclick="copyText('text8')">Copiar</button>  
+           
+            </div>
+            <div class="cell" data-title="entrega">
+                <h2>Cliente deseja pagar na entrega após passar o orçamento
+                </h2>
+                <p id="text9">Esses valores que te passei são exclusivos para pagamento por link por este canal (via Pix ou cartão de crédito) com o pagamento antecipado. Caso queira fazer o pagamento na entrega, seria necessário que eu solicitasse por meio do painel diretamente da loja e os valores podem alterar. </p>
+            </p><button onclick="copyText('text9')">Copiar</button>  
+            </div>
+            <div class="cell" data-title="solicitar dados">
+                <h2>Cadastro do Cliente
+                </h2>
+                <p id="text10">Para dar continuidade poderia me informar;                                  
+                    <br>CPF
+                    <br>NOME
+                    <br>ENDEREÇO                                                                                          
+                    <br>CEP
+                    <br>EMAIL                                                                                                
+                    <br>Assim consigo acessar os estoques próximo a sua região. </p>
+                </p><button onclick="copyText('text10')">Copiar</button> 
+            </div>
+            <div class="cell" data-title="whatsApp">
+                <h2>Cliente solicita WhatsApp da farmacia física</h2>
+                <p id="text11">As farmácias físicas não têm um telefone para atendimento ao cliente. Caso queira fazer alguma pesquisa de preço, estoque, descontos, compras ou falar com o farmacêutico, seria por esse número mesmo! Atendemos todo o Brasil. Teria algo em que posso te ajudar? </p>
+            </p><button onclick="copyText('text11')">Copiar</button> 
+            </div>
+            <!-- Adicione mais células conforme necessário -->
+        </div>
+        
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
