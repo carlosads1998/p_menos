@@ -7,13 +7,24 @@
     <title>Central de Ajuda</title>
 </head>
 <body>
+
+    <!-- Solicitação de senha -->
+    <script>
+        var senhaCorreta = "12345"; // Troque por sua senha
+        var senha = prompt("Digite a senha para acessar esta página:");
+        if (senha !== senhaCorreta) {
+            alert("Senha incorreta!");
+            window.location.href = "https://www.paguemenos.com"; // Redireciona para outra página
+        }
+    </script>
     <!-- Menu lateral -->
     <div id="sidebar" class="sidebar">
         <ul>
-            <li><a href="#">Scripts</a></li>
-            <li><a href="#">Resultado</a></li>
-            <li><a href="#">Escala</a></li>
-            <li><a href="#">Opinião</a></li>
+            <li><a href="/home.html">inicio</a></li>
+            <li><a href="/scripts.html">Scripts</a></li>
+            <li><a href="/escala.html">Escala</a></li>
+            <li><a href="/assets/files/162820208_ROTEIRO_DE_LOJAS_ATUALIZADOS_ATE_31_07 (2).xlsx" download>Lojas Atualizadas</a></li>
+            <li><a href="/assets/files/MEDICAMENTOS INTERCAMBIÁVIES.xlsx" download>Medicamentos Intercambiáveis</a></li>
         </ul>
     </div>
 
@@ -24,11 +35,34 @@
         <span></span>
     </div>
 
+
+
     <!-- Conteúdo principal -->
     <div class="container">
         <img src="/assets/img/logo.png" alt="Logo">
     </div>
+        <!-- Título centralizado -->
+        <h1>Resultado da Equipe</h1>
 
+        <div class="spreadsheet-container">
+            <iframe 
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRMhRuMIaMxA4rXDzUcAFZ-ZU_jpWN7gMGP6JzUq-aM8AqSXaF7siznRXjMZUre2z5qNinz94NSvaEN/pubhtml" 
+                width="100%" 
+                frameborder="0">
+            </iframe>
+        </div>
+
+        <div class="dropdown" style="position: absolute; top: 20px; right: 20px;">
+            <button class="dropdown-button">Link</button>
+            <div class="dropdown-content">
+                <a href="https://paineldevendastelevendas.pmenos.com.br/#/" target="_blank">Painel</a>
+                <a href="http://flexomni-televendas.pmenos.com.br:8080/" target="_blank">G4</a>
+                <a href="https://portal.chatbotmaker.io/" target="_blank">Suri</a>
+                <a href="https://www.paguemenos.com.br/" target="_blank">Pague Menos</a>
+                <a href="https://www.drogaraia.com.br/" target="_blank">Droga Raia</a>
+            </div>
+        </div>
+  
     <script src="assets/js/scripts.js"></script>
 </body>
 </html>

@@ -51,7 +51,6 @@ function filterCells() {
 function copyText(elementId) {
   const text = document.getElementById(elementId).textContent;
   navigator.clipboard.writeText(text)
-      .then(() => alert("Texto copiado com sucesso!"))
       .catch(err => console.error("Erro ao copiar texto:", err));
 }
 
@@ -59,6 +58,40 @@ function copyText(elementId) {
 function copyText(elementId) {
   const text = document.getElementById(elementId).textContent;
   navigator.clipboard.writeText(text)
-      .then(() => alert("Texto copiado com sucesso!"))
+
       .catch((err) => console.error("Erro ao copiar texto: ", err));
 }
+
+
+function copyFormattedText() {
+        var content = "Para dar continuidade, poderia me informar:\n\n";
+        content += "• CPF\n";
+        content += "• NOME\n";
+        content += "• ENDEREÇO\n";
+        content += "• CEP\n";
+        content += "• EMAIL\n\n";
+        content += "Assim consigo acessar os estoques próximo a sua região.";
+    
+        // Cria um campo temporário para copiar o conteúdo
+        var tempTextArea = document.createElement("textarea");
+        document.body.appendChild(tempTextArea);
+    
+        // Coloca o conteúdo a ser copiado no campo temporário
+        tempTextArea.value = content;
+    
+        // Seleciona o conteúdo do campo temporário
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); // Para dispositivos móveis
+    
+        // Copia o texto para a área de transferência
+        try {
+            document.execCommand('copy');
+            alert("Texto copiado com sucesso!"); // Alerta de sucesso
+        } catch (err) {
+            alert("Falha ao copiar o texto.");
+        }
+    
+        // Remove o campo temporário
+        document.body.removeChild(tempTextArea);
+    }
+    
