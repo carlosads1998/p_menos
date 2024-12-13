@@ -91,7 +91,7 @@ body {
     height: auto; /* Altura ajustada automaticamente */
     position: absolute;
     top: 0%; /* Centraliza verticalmente */
-    left: 5%; /* Centraliza horizontalmente */
+    left: 2%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Ajusta o ponto de referência */
 }
 .slide {
@@ -106,7 +106,7 @@ body {
 
 .slide img {
     margin-top: 190px;
-    width: 1360px;
+    width: 1295px;
     height: 450px;
     border-radius: 10px; /* Bordas arredondadas */
 }

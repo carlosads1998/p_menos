@@ -5,64 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/resultado.css" rel="stylesheet">
     <title>Central de Ajuda</title>
+    <style>
+        /* Estilo para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 100px;
+            border: 1px solid #888;
+            width: 300px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .modal input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Solicitação de senha -->
-    <script>
-        var senhaCorreta = "12345"; // Troque por sua senha
-        var senha = prompt("Digite a senha para acessar esta página:");
-        if (senha !== senhaCorreta) {
-            alert("Senha incorreta!");
-            window.location.href = "https://www.paguemenos.com"; // Redireciona para outra página
-        }
-    </script>
-    <!-- Menu lateral -->
+<div id="passwordModal" class="modal">
+    <div class="modal-content">
+        <h2>Digite a senha</h2>
+        <input type="password" id="passwordInput" placeholder="Senha">
+        <button onclick="checkPassword()">Entrar</button>
+    </div>
+</div>
+
+<!-- Conteúdo principal -->
+<div id="mainContent" style="display: none;">
+    <!-- Sua página aqui -->
     <div id="sidebar" class="sidebar">
         <ul>
             <li><a href="/home.html">inicio</a></li>
             <li><a href="/scripts.html">Scripts</a></li>
             <li><a href="/escala.html">Escala</a></li>
-            <li><a href="https://docs.google.com/spreadsheets/d/1rlZ7KJZeYPv-kpNmh8IvrJkac44udps2Xq0SiWzsz2s/edit?gid=125506093#gid=125506093" target="_blank">Lojas Atualizadas</a></li>            <li><a href="/assets/files/MEDICAMENTOS INTERCAMBIÁVIES.xlsx" download>Medicamentos Intercambiáveis</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1rlZ7KJZeYPv-kpNmh8IvrJkac44udps2Xq0SiWzsz2s/edit?gid=125506093#gid=125506093" target="_blank">Lojas Atualizadas</a></li>
             <li><a href="/assets/files/MEDICAMENTOS INTERCAMBIÁVIES.xlsx" download>Medicamentos Intercambiáveis</a></li>
         </ul>
     </div>
 
-    <!-- Botão de menu -->
     <div class="menu-icon" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-
-
-    <!-- Conteúdo principal -->
     <div class="container">
         <img src="/assets/img/logo.png" alt="Logo">
     </div>
-        <!-- Título centralizado -->
-        <h1>Resultado da Equipe</h1>
+    <h1>Resultado da Equipe</h1>
+    <div class="spreadsheet-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRMhRuMIaMxA4rXDzUcAFZ-ZU_jpWN7gMGP6JzUq-aM8AqSXaF7siznRXjMZUre2z5qNinz94NSvaEN/pubhtml" width="100%" frameborder="0"></iframe>
+    </div>
+</div>
 
-        <div class="spreadsheet-container">
-            <iframe 
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRMhRuMIaMxA4rXDzUcAFZ-ZU_jpWN7gMGP6JzUq-aM8AqSXaF7siznRXjMZUre2z5qNinz94NSvaEN/pubhtml" 
-                width="100%" 
-                frameborder="0">
-            </iframe>
-        </div>
+<script>
+    // Modal senha
+    const correctPassword = "12345"; // Troque pela senha desejada
+    const modal = document.getElementById("passwordModal");
+    const mainContent = document.getElementById("mainContent");
 
-        <div class="dropdown" style="position: absolute; top: 20px; right: 20px;">
-            <button class="dropdown-button">Link</button>
-            <div class="dropdown-content">
-                <a href="https://paineldevendastelevendas.pmenos.com.br/#/" target="_blank">Painel</a>
-                <a href="http://flexomni-televendas.pmenos.com.br:8080/" target="_blank">G4</a>
-                <a href="https://portal.chatbotmaker.io/" target="_blank">Suri</a>
-                <a href="https://www.paguemenos.com.br/" target="_blank">Pague Menos</a>
-                <a href="https://www.drogaraia.com.br/" target="_blank">Droga Raia</a>
-            </div>
-        </div>
-  
-    <script src="assets/js/scripts.js"></script>
+    // Mostrar modal na inicialização
+    window.onload = function () {
+        modal.style.display = "block";
+    };
+
+    function checkPassword() {
+        const inputPassword = document.getElementById("passwordInput").value;
+        if (inputPassword === correctPassword) {
+            modal.style.display = "none";
+            mainContent.style.display = "block";
+        } else {
+            alert("Senha incorreta!");
+            window.location.href = "https://www.paguemenos.com"; // Redirecionar
+        }
+    }
+</script>
+
 </body>
 </html>
